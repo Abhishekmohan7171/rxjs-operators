@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { map, mapTo, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'observables';
+  arr:number[]=[];
+  res!:number;
+
+  observe(){
+    console.log("observe started")
+
+    of(1,2,3,4)
+      .pipe(mapTo("Success"))
+      .subscribe(console.log)
+  }
+
+
 }
