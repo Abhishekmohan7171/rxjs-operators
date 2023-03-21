@@ -1,3 +1,12 @@
 <h1>Observables</h1>
 
 <button (click)="observe()">Observe</button>
+
+
+
+<ng-container *ngIf="content | async as data">
+  {{data|json}}
+  <ng-container *ngFor="let item of content">
+    {{item.title}}
+  </ng-container>
+</ng-container>
